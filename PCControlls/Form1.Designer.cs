@@ -33,15 +33,15 @@ namespace POV_Globe
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.RotateRightButton = new System.Windows.Forms.Button();
-            this.RotateLeftButton = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.StopButton = new System.Windows.Forms.Button();
+            this.RotateLeftButton = new System.Windows.Forms.Button();
+            this.RotateRightButton = new System.Windows.Forms.Button();
+            this.AngleRotateButton = new System.Windows.Forms.Button();
+            this.RotateAngleTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,39 +83,6 @@ namespace POV_Globe
             // 
             this.colorDialog1.FullOpen = true;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.RotateRightButton);
-            this.groupBox3.Controls.Add(this.RotateLeftButton);
-            this.groupBox3.Location = new System.Drawing.Point(14, 159);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox3.Size = new System.Drawing.Size(887, 109);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Text";
-            // 
-            // RotateRightButton
-            // 
-            this.RotateRightButton.Location = new System.Drawing.Point(649, 41);
-            this.RotateRightButton.Name = "RotateRightButton";
-            this.RotateRightButton.Size = new System.Drawing.Size(87, 37);
-            this.RotateRightButton.TabIndex = 3;
-            this.RotateRightButton.Text = "Right";
-            this.RotateRightButton.UseVisualStyleBackColor = true;
-            this.RotateRightButton.Click += new System.EventHandler(this.RotateRightButton_Click);
-            // 
-            // RotateLeftButton
-            // 
-            this.RotateLeftButton.Location = new System.Drawing.Point(481, 38);
-            this.RotateLeftButton.Name = "RotateLeftButton";
-            this.RotateLeftButton.Size = new System.Drawing.Size(87, 41);
-            this.RotateLeftButton.TabIndex = 2;
-            this.RotateLeftButton.Text = "Left";
-            this.RotateLeftButton.UseVisualStyleBackColor = true;
-            this.RotateLeftButton.Click += new System.EventHandler(this.RotateLeftButton_Click);
-            // 
             // button7
             // 
             this.button7.Location = new System.Drawing.Point(7, 29);
@@ -145,7 +112,7 @@ namespace POV_Globe
             // 
             // StopButton
             // 
-            this.StopButton.Location = new System.Drawing.Point(583, 286);
+            this.StopButton.Location = new System.Drawing.Point(508, 216);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(94, 29);
             this.StopButton.TabIndex = 9;
@@ -153,22 +120,62 @@ namespace POV_Globe
             this.StopButton.UseVisualStyleBackColor = true;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
             // 
+            // RotateLeftButton
+            // 
+            this.RotateLeftButton.Location = new System.Drawing.Point(455, 146);
+            this.RotateLeftButton.Name = "RotateLeftButton";
+            this.RotateLeftButton.Size = new System.Drawing.Size(87, 41);
+            this.RotateLeftButton.TabIndex = 2;
+            this.RotateLeftButton.Text = "Left";
+            this.RotateLeftButton.UseVisualStyleBackColor = true;
+            this.RotateLeftButton.Click += new System.EventHandler(this.RotateLeftButton_Click);
+            // 
+            // RotateRightButton
+            // 
+            this.RotateRightButton.Location = new System.Drawing.Point(570, 146);
+            this.RotateRightButton.Name = "RotateRightButton";
+            this.RotateRightButton.Size = new System.Drawing.Size(87, 37);
+            this.RotateRightButton.TabIndex = 3;
+            this.RotateRightButton.Text = "Right";
+            this.RotateRightButton.UseVisualStyleBackColor = true;
+            this.RotateRightButton.Click += new System.EventHandler(this.RotateRightButton_Click);
+            // 
+            // AngleRotateButton
+            // 
+            this.AngleRotateButton.Location = new System.Drawing.Point(230, 131);
+            this.AngleRotateButton.Name = "AngleRotateButton";
+            this.AngleRotateButton.Size = new System.Drawing.Size(118, 38);
+            this.AngleRotateButton.TabIndex = 10;
+            this.AngleRotateButton.Text = "Rotate";
+            this.AngleRotateButton.UseVisualStyleBackColor = true;
+            this.AngleRotateButton.Click += new System.EventHandler(this.AngleRotateButton_Click);
+            // 
+            // RotateAngleTextBox
+            // 
+            this.RotateAngleTextBox.Location = new System.Drawing.Point(52, 137);
+            this.RotateAngleTextBox.Name = "RotateAngleTextBox";
+            this.RotateAngleTextBox.Size = new System.Drawing.Size(139, 27);
+            this.RotateAngleTextBox.TabIndex = 11;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 460);
+            this.Controls.Add(this.RotateAngleTextBox);
+            this.Controls.Add(this.AngleRotateButton);
+            this.Controls.Add(this.RotateRightButton);
             this.Controls.Add(this.StopButton);
+            this.Controls.Add(this.RotateLeftButton);
             this.Controls.Add(this.groupBox5);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -178,13 +185,14 @@ namespace POV_Globe
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button RotateRightButton;
-        private System.Windows.Forms.Button RotateLeftButton;
         private System.Windows.Forms.Button StopButton;
+        private System.Windows.Forms.Button RotateLeftButton;
+        private System.Windows.Forms.Button RotateRightButton;
+        private System.Windows.Forms.Button AngleRotateButton;
+        private System.Windows.Forms.TextBox RotateAngleTextBox;
     }
 }
 

@@ -66,20 +66,36 @@ void Get_USB_Data (int currentValue) {
 			if(buffer[0] == 'R'){ //Rotate command
 				blinkerOn = !blinkerOn;
 				motorOn = true;
+
+				/* Undelete if works
+				int thousands = (uint8_t) buffer[3];
+				int hundreads = (uint8_t) buffer[4];
+				int tens = (uint8_t) buffer[5];
+				int ones = (uint8_t) buffer[6];
+				//targetValue = currentValue + degrees * 2.77777778;
+							*/
 				if(buffer[2] == 'L'){ //Turn left
 					above = false;
-					targetValue = currentValue - 100;
+					targetValue += degrees * 2.77777778; //4095 - 10kOhm - 3600degrees; 1 degree - 2.77777778Ohm
 				}
-				if(buffer[2] == 'R'){ //Turn right
+				else if(buffer[2] == 'R'){ //Turn right
 					above = true;
-					targetValue = currentValue + 100;
+					targetValue -= degrees * 2.77777778;
 				}
 
-			}
 
+				else{
+					int thousands = (uint8_t) buffer[1];
+					int hundreads = (uint8_t) buffer[2];
+					int tens = (uint8_t) buffer[3];
+					int ones = (uint8_t) buffer[4];
+					int degrees = thousands * 1000 + hundreads * 100 + tens * 10 + ones;
+					targetValue = currentValue + degrees * 2.77777778; //4095 - 10kOhm - 3600degrees; 1 degree - 2.77777778Ohm
+				}
+			}
 		}
-        CDC_FlushRxBuffer_FS();
-    }
+    CDC_FlushRxBuffer_FS();
+}
 /* USER CODE END 0 */
 
 /**
@@ -127,7 +143,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    	//Get potentiometer value
+    	//Get potentiometer value, 10k, 10 rotations
     	HAL_ADC_Start(&hadc1);
     	HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);
     	currentValue = HAL_ADC_GetValue(&hadc1);

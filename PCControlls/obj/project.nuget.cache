@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XMZIshXNj3bDHC3cyh6Lc6uJefTWuh/SrcFyRYVeqZ+jKBYvfYwOjf/HATyN3e9I2KQPrf3Z+pDQwnOfabvE9w==",
+  "dgSpecHash": "RHqGZHXJGdKEb+ixoyRBCWUERfkvguCrz+7R2I2j2BWhEL1o001KwGqyjzGOl/t2DEtLf5WtogDyM/gvc13N9w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\PCKodas\\POV_Globe.csproj",
+  "projectFilePath": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\MedusaMotorControllers\\PCControlls\\POV_Globe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\simon\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\simon\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",

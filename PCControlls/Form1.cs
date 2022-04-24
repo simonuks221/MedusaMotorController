@@ -202,12 +202,10 @@ namespace POV_Globe
             if (motorOn)
             {
                 inline[0] = (byte)'S';
-
             }
             else
             {
                 inline[0] = (byte)'S';
-
             }
 
             inline[ARRAY_SIZE - 1] = (byte)'\n';
@@ -215,6 +213,70 @@ namespace POV_Globe
             if (isConnected)
             {
                 port.Write(inline, 0, ARRAY_SIZE);
+            }
+        }
+
+        private void AngleRotateButton_Click(object sender, EventArgs e)
+        {
+            int angle = Int32.Parse(RotateAngleTextBox.Text);
+            int thousands = (int)Math.Floor(angle / 1000f);
+            int hundreads = (int)Math.Floor(angle % 1000 / 100f);
+            int tens = (int)Math.Floor(angle % 100 / 10f);
+            int ones = (int)(angle % 10);
+
+            int ARRAY_SIZE = 6;
+
+            byte[] inline = new byte[ARRAY_SIZE];
+
+            if (motorOn)
+            {
+                inline[0] = (byte)'R';
+                /*
+                inline[1] = (byte)'\n';
+                inline[3] = (byte)thousands;
+                inline[4] = (byte)hundreads;
+                inline[5] = (byte)tens;
+                inline[6] = (byte)ones;
+                 */
+                inline[1] = (byte)thousands;
+                inline[2] = (byte)hundreads;
+                inline[3] = (byte)tens;
+                inline[4] = (byte)ones;
+            }
+            else
+            {
+                inline[0] = (byte)'R';
+                inline[1] = (byte)thousands;
+                inline[2] = (byte)hundreads;
+                inline[3] = (byte)tens;
+                inline[4] = (byte)ones;
+                /*
+                inline[1] = (byte)'\n';
+                inline[3] = (byte)thousands;
+                inline[4] = (byte)hundreads;
+                inline[5] = (byte)tens;
+                inline[6] = (byte)ones;
+                 */
+            }
+            /*
+             * if(angle > 0){
+             *  inline[2] = (byte)'R';
+             * }
+             * else{
+             *  inline[2] = (byte)'L';
+             * }
+             */
+            //
+
+            inline[ARRAY_SIZE - 1] = (byte)'\n';
+            if (isConnected)
+            {
+                port.Write(inline, 0, ARRAY_SIZE);
+                Debug.WriteLine(inline[0]);
+                Debug.WriteLine(inline[1]);
+                Debug.WriteLine(inline[2]);
+                Debug.WriteLine(inline[3]);
+                Debug.WriteLine(inline[4]);
             }
         }
     }

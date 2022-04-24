@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\PCKodas\\POV_Globe.csproj": {}
+    "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\MedusaMotorControllers\\PCControlls\\POV_Globe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\PCKodas\\POV_Globe.csproj": {
+    "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\MedusaMotorControllers\\PCControlls\\POV_Globe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\PCKodas\\POV_Globe.csproj",
+        "projectUniqueName": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\MedusaMotorControllers\\PCControlls\\POV_Globe.csproj",
         "projectName": "POV_Globe",
-        "projectPath": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\PCKodas\\POV_Globe.csproj",
+        "projectPath": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\MedusaMotorControllers\\PCControlls\\POV_Globe.csproj",
         "packagesPath": "C:\\Users\\simon\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\PCKodas\\obj\\",
+        "outputPath": "C:\\Users\\simon\\Desktop\\UNI\\LightFestivalis\\Orange\\MedusaMotorControllers\\PCControlls\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
