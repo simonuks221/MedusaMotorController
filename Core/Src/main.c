@@ -60,21 +60,28 @@ void Get_USB_Data (int currentValue) {
 				motorOn = false;
 				blinkerOn = !blinkerOn;
 			}
-			if(buffer[0] == 'L'){
-				blinkerOn = !blinkerOn;
-			}
 			if(buffer[0] == 'R'){ //Rotate command
 				blinkerOn = !blinkerOn;
 				motorOn = true;
 
-				/* Undelete if works
-				int thousands = (uint8_t) buffer[3];
-				int hundreads = (uint8_t) buffer[4];
-				int tens = (uint8_t) buffer[5];
-				int ones = (uint8_t) buffer[6];
-				//targetValue = currentValue + degrees * 2.77777778;
-							*/
+				int thousands = (uint8_t) buffer[2];
+				int hundreads = (uint8_t) buffer[3];
+				int tens = (uint8_t) buffer[4];
+				int ones = (uint8_t) buffer[5];
+				uint8_t degrees = thousands * 1000 + hundreads * 100 + tens * 10 + ones;
+				targetValue = currentValue + degrees * 2.77777778;
+				/*
+				for(int i = 0; i < ones; i++){
+					HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+					HAL_Delay(300);
+					HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+										HAL_Delay(300);
+				}
+				*/
+
+				/*
 				if(buffer[2] == 'L'){ //Turn left
+
 					above = false;
 					targetValue += degrees * 2.77777778; //4095 - 10kOhm - 3600degrees; 1 degree - 2.77777778Ohm
 				}
@@ -82,8 +89,6 @@ void Get_USB_Data (int currentValue) {
 					above = true;
 					targetValue -= degrees * 2.77777778;
 				}
-
-
 				else{
 					int thousands = (uint8_t) buffer[1];
 					int hundreads = (uint8_t) buffer[2];
@@ -92,6 +97,7 @@ void Get_USB_Data (int currentValue) {
 					int degrees = thousands * 1000 + hundreads * 100 + tens * 10 + ones;
 					targetValue = currentValue + degrees * 2.77777778; //4095 - 10kOhm - 3600degrees; 1 degree - 2.77777778Ohm
 				}
+				*/
 			}
 		}
     CDC_FlushRxBuffer_FS();
@@ -184,7 +190,7 @@ int main(void)
 
     	//Sviesytes junginejimas testui
     	if(blinkerOn){
-			HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
+			//HAL_GPIO_TogglePin(GPIOC, GPIO_PIN_13);
     	}
     	HAL_Delay(100);
     }

@@ -65,8 +65,8 @@ all: main-build
 main-build: MeduzosMotorai.elf secondary-outputs
 
 # Tool invocations
-MeduzosMotorai.elf: $(OBJS) $(USER_OBJS) C:\Users\simon\Desktop\UNI\LightFestivalis\Orange\MedusaMotorsController\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MeduzosMotorai.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\simon\Desktop\UNI\LightFestivalis\Orange\MedusaMotorsController\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MeduzosMotorai.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+MeduzosMotorai.elf: $(OBJS) $(USER_OBJS) C:\Users\simon\Desktop\UNI\LightFestivalis\Orange\MedusaMotorControllers\STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "MeduzosMotorai.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\simon\Desktop\UNI\LightFestivalis\Orange\MedusaMotorControllers\STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MeduzosMotorai.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
